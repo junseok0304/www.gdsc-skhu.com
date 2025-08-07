@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 import { layoutCss } from '../../styles/constants/layout';
 
-const GDGoC_LINK = 'https://sites.google.com/view/gdeveloperskorea/gdg-on-campus';
+const GDG_OC_LINK = 'https://sites.google.com/view/gdeveloperskorea/gdg-on-campus';
 
 export default function Nav() {
   return (
@@ -41,7 +41,7 @@ export default function Nav() {
           gap: 0.75rem;
         `}
       >
-        <a href={GDGoC_LINK} target="_blank" rel="noreferrer">
+        <a href={GDG_OC_LINK} target="_blank" rel="noreferrer">
           About
         </a>
         <Link href="/contact" scroll={false}>
