@@ -25,10 +25,9 @@ export default function PartSection() {
       <motion.h2
         variants={defaultFadeInVariants}
         css={css`
-          ${bigCss}
+          ${bigCss};
           text-align: center;
           margin-bottom: 120px;
-
           ${mediaQuery('xs')} {
             margin-bottom: 80px;
           }
@@ -42,7 +41,6 @@ export default function PartSection() {
         css={css`
           display: flex;
           justify-content: space-evenly;
-
           ${mediaQuery('xs')} {
             flex-direction: column;
             justify-content: center;
@@ -51,7 +49,7 @@ export default function PartSection() {
           }
         `}
       >
-        <motion.article css={articleCss} variants={defaultFadeInUpVariants}>
+        <motion.article css={articleCss()} variants={defaultFadeInUpVariants}>
           <h3>스터디 활동</h3>
           <p>
             Web, Mobile, Server, PM(기획), DESIGN(디자인) 과정으로 나누어, 입문자를 기준으로 설계한
@@ -63,7 +61,7 @@ export default function PartSection() {
           </p>
         </motion.article>
 
-        <motion.article css={articleCss} variants={defaultFadeInUpVariants}>
+        <motion.article css={articleCss()} variants={defaultFadeInUpVariants}>
           <h3>프로젝트 활동</h3>
           <p>
             3개월간의 스터디 세션을 통해 탄탄히 다져진 기본기를 바탕으로 다른 파트의 멤버들과 함께
@@ -75,7 +73,7 @@ export default function PartSection() {
           </p>
         </motion.article>
 
-        <motion.article css={articleCss} variants={defaultFadeInUpVariants}>
+        <motion.article css={articleCss()} variants={defaultFadeInUpVariants}>
           <h3>친목 활동</h3>
           <p>
             GDGoC는 개발에 있어 다른 무엇보다 협력과 소통이 가장 중요하다고 생각합니다.
@@ -87,7 +85,9 @@ export default function PartSection() {
           </p>
         </motion.article>
       </motion.div>
+
       <motion.div
+        variants={staggerOne}
         css={css`
           display: flex;
           justify-content: space-evenly;
@@ -100,7 +100,6 @@ export default function PartSection() {
             margin-top: 1rem;
           }
         `}
-        variants={staggerOne}
       >
         <motion.article css={articleCss({ width: '95%' })} variants={defaultFadeInUpVariants}>
           <h3>연합 활동</h3>
@@ -122,7 +121,7 @@ export default function PartSection() {
   );
 }
 
-const articleCss = ({ width = '30%' }: { width?: string }) => css`
+const articleCss = ({ width = '30%' }: { width?: string } = {}) => css`
   ${glassCardCss};
   display: block;
   width: ${width};
